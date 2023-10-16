@@ -18,10 +18,18 @@ test_data = df[-id,]
 
 # Train model
 
+ctrl = trainControl(
+  method = 'CV',
+  number = 10 ,
+  verboseIter = F
+)
+
 rf_model = train(Price ~ . - Postal_Code ,
                  data = train_data,
                  method='rf',
-                 ntree=100)
+                 ntree=100,
+                 preProcess = c('center','scale'),
+                 trControl = ctrl )
 
 # Score model 
 
