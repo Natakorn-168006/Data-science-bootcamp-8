@@ -1,24 +1,50 @@
-# Homework 1 , Pizza chatbot
-
-
 
 chatbot = function(){
-    type = list('hawaiian','cheese','pepperoni')
-    price = list(Hawaiian=200,Cheese=100,Pepperoni=150,Other = 250)
-    sizes = list(L = 1.2,M = 1,S = 0.8)
-    pizza = readline('What pizza you would like? : ')
-    pizza = tolower(pizza)
-    size = readline('What size you would like? : ')
-    vol = as.numeric(readline('How many pizza would like? : '))
+  cat('welcome to datarockie pizza\n')
+  cat('\n','This is our menu\n')
+  
+  menu = data.frame(
+    id_item = c(1,2,3),
+    pizza_name = c('hawaiian','cheese','pepperoni'),
+    price = c(200,100,150)
+  )
+  print(menu)
+  
+  while(T){
+
+    choose_id_item=readline('You can select Pizza ID:')
+    name_product=menu$pizza_name[menu$id_item == choose_id_item]
+    price_product=menu$price[menu$id_item == choose_id_item]
     
-    if (pizza == 'hawaiian' & size == 'L'){
-      print(paste('You must pay',price$Hawaiian*sizes$L*vol,'Baht'))
-    }else if (pizza == 'cheese' & size == 'L'){
-      print(paste('You must pay',price$Cheese*sizes$L*vol,'Baht'))
-    }else if (!(pizza %in% type)){
-      print(paste("We don't have",pizza,'Pizza,','We have Hawaiian ,Cheese and Pepperoni'))
+    if (choose_id_item %in% menu[menu$id_item,c('id_item')]){
+      print(paste("Okay, you choose Which size", name_product,"pizza do you want?"))
+      break
+    } else {
+      print("Please order again,we don't have pizza that you like")
     }
+    
+  }
+  
+  while(T){
+    
+    pizza_size = data.frame(
+    size = c('L','M','S'),
+    price_size = c(100,50,0)
+  )
+    print(pizza_size)
+    choose_size = toupper(readline('Pizza size:'))
+    
+    if(choose_size %in% pizza_size$size){
+      pay = price_product+pizza_size$price_size[pizza_size$size==choose_size]
+      break
+    }else{
+      print('Please order again')
+    }
+    
+  }
+  
+  cat("Total payments:",pay,'Baht\n')
+  cat('Thank you')
+  
 }
-
-
 chatbot()
