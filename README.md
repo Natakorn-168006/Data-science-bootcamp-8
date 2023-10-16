@@ -2,7 +2,7 @@
 ## What did I learn from this Bootcamp
 I learn a lot stuff related to data science skills.
 
-This bootcamp has 10 sprints as follow.
+This bootcamp has 10 sprints as follow. 
 
 - Spreadsheets
 - Database (SQL)
