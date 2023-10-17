@@ -12,6 +12,7 @@ This bootcamp has 10 sprints as follow.
 - Essential Statistics for Data Analyst
 - Essential Machine Learning for Data Analyst
 - Python Programming
+  - Final project : https://datalore.jetbrains.com/notebook/OUA7WJt7kBqiAWBsZFkIlq/zeq7iCWVeU6f4Xugg9XVdy
 - Essential Python for Data Analyst
 - Dashboard
 
